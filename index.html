@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nostra</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    .scroll-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!--offer popup-->
+  <div id="popup"
+    class="bg-gray-900 h-12 text-white p-1 grid grid-flow-col justify-center items-center gap-16 md:gap-24 lg:gap-32">
+    <div class="grid grid-flow-col justify-center items-center gap-2">
+      <h1 class="text-xs md:text-base lg:text-xl">Sign Up and</h1>
+      <h1 class="font-bold text-xs md:text-base lg:text-xl">Get 20% OFF</h1>
+      <h1 class="text-xs md:text-base lg:text-xl">for your first Order</h1>
+    </div>
+    <div>
+      <p class="font-bold text-xs md:text-base lg:text-xl cursor-pointer">X</p>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header class="bg-white grid grid-flow-col justify-between items-center p-5 pb-3 sticky top-0 z-30" id="heading">
+    <div>
+      <h1 class="text-4xl font-bold">Nostra</h1>
+    </div>
+    <div id="menuicon">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6 w-6 lg:hidden">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </div>
+    <div class="hidden lg:flex gap-16 mr-5">
+      <h3 class="cursor-pointer hover:underline  -ml-5"><a href="index.html">Home</a></h3>
+      <h3 class="cursor-pointer hover:underline"><a href="#new-arrivals">New Arrivals</a></h3>
+      <h3 class="cursor-pointer hover:underline"><a href="#most-wanted">Most Wanted</a></h3>
+      <h3 class="cursor-pointer hover:underline"><a href="collection.html">Collections</a></h3>
+      <h3 class="cursor-pointer hover:underline"><a href="contact.html">Contact Us</a></h3>
+    </div>
+  </header>
+
+  <!-- sideNavbar -->
+
+  <div id="sidebar"
+    class="grid grid-flow-row gap-5 bg-gray-800 fixed z-50 p-5 top-0 text-white text-center transition-all duration-1000 lg:hidden"
+    style="width: 40%; height: 70vh; right: -40%;">
+    <div id="close" class="text-right cursor-pointer">
+      <p>X</p>
+    </div>
+    <p class="cursor-pointer hover:underline"><a href="index.html">Home</a></p>
+    <p class="cursor-pointer hover:underline"><a href="#new-arrivals">New Arrivals</a></p>
+    <p class="cursor-pointer hover:underline"><a href="#most-wanted">Most Wanted</a></p>
+    <p class="cursor-pointer hover:underline"><a href="collection.html">Collections</a></p>
+    <p class="cursor-pointer hover:underline"><a href="contact.html">Contact Us</a></p>
+  </div>
+
+  <!-- slider img -->
+  <section class="relative overflow-hidden w-full ">
+    <div id="slider" class="flex transition-transform duration-1000 ease-in-out w-full">
+      <div class="w-full flex-shrink-0">
+        <img src="./images/slider2.jpeg" alt="slider-one" class="w-full p-4 rounded-3xl object-cover">
+      </div>
+      <div class="w-full flex-shrink-0">
+        <img src="./images/slider3.jpeg" alt="slider-two" class="w-full p-4 rounded-3xl object-cover">
+      </div>
+      <div class="w-full flex-shrink-0">
+        <img src="./images/slider1.jpeg" alt="slider-three" class="w-full p-4 rounded-3xl object-cover">
+      </div>
+    </div>
+    <div id="prev" class="absolute p-2 top-24 md:top-48 lg:top-64 transform -translate-y-1/2 cursor-pointer z-20">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6 w-20 text-white md:w-32 lg:w-36">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
+    </div>
+    <div class="block sm:hidden text-center w-full text-white z-10 absolute top-5 p-4">
+      <h1 class="text-2xl font-bold">Level up your style with our</h1>
+      <h4 class="text-md font-bold text-center mb-2">Summer Collections</h4>
+      <button class="bg-white text-black rounded-md w-32 px-4 py-1 ">Shop Now 🡢</button>
+    </div>
+    <div class="hidden md:block lg:hidden text-center w-full text-white z-10 absolute top-20  p-4">
+      <h1 class="text-5xl font-bold mb-3">Level up your style with our</h1>
+      <h4 class="text-lg font-bold text-center mb-2">Summer Collections</h4>
+      <button class="bg-white text-black rounded-md w-32 px-4 py-2 ">Shop Now 🡢</button>
+    </div>
+    <div class="hidden lg:block text-center w-full text-white z-10 absolute top-28 p-4">
+      <h1 class="text-7xl font-bold mb-3">Level up your style with our</h1>
+      <h4 class="text-2xl font-bold text-center mb-2">Summer Collections</h4>
+      <button class="bg-white text-black rounded-md w-32 px-4 py-2 ">Shop Now 🡢</button>
+    </div>
+    <div id="next"
+      class="right-0 md:p-0 absolute p-2 top-24 md:top-48 lg:top-64 transform -translate-y-1/2 cursor-pointer z-20">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6 w-20 text-white md:w-32 lg:w-36">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+    </div>
+  </section>
+  <!--Brands-->
+  <section class="p-4 my-4">
+    <h1 class="text-2xl font-bold mb-2">Brands</h1>
+    <div class="grid grid-flow-col w-full justify between item-center">
+      <div>
+        <img src="./images/puma.png" alt="Puma" class="w-6 ml-2 md:w-10 md:ml-1 lg:w-12 lg:ml-0.5">
+        <p class="md:text-xl lg:text-2xl">Puma</p>
+      </div>
+      <div>
+        <img src="./images/adidas.png" alt="Adidas" class="w-6 ml-2 md:w-10 md:ml-1 lg:w-12 lg:ml-0.5">
+        <p class="md:text-xl lg:text-2xl">Adidas</p>
+      </div>
+      <div>
+        <img src="./images/simple.png" alt="Simple" class="w-6 ml-2 md:w-10 md:ml-1 lg:w-12 lg:ml-0.5">
+        <p class="md:text-xl lg:text-2xl">Simple</p>
+      </div>
+      <div>
+        <img src="./images/leaves1.png" alt="leaves" class="w-6 ml-2 md:w-10 md:ml-1 lg:w-12 lg:ml-0.5">
+        <p class="md:text-xl lg:text-2xl">Leaves</p>
+      </div>
+      <div>
+        <img src="./images/behance.png" alt="behance" class="w-6 ml-2 md:w-10 md:ml-1 lg:w-12 lg:ml-0.5">
+        <p class="md:text-xl lg:text-2xl">Behance</p>
+      </div>
+      <div>
+        <img src="./images/twitch.png" alt="twitch" class="w-6 ml-2 md:w-10 md:ml-1 lg:w-12 lg:ml-0.5">
+        <p class="md:text-xl lg:text-2xl">Twitch</p>
+      </div>
+      <div>
+        <img src="./images/leaves1.png" alt="Leaves" class="w-6 ml-2 md:w-10 md:ml-1 lg:w-12 lg:ml-0.5">
+        <p class="md:text-xl lg:text-2xl">Leaves</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- customer experiences -->
+  <section class="p-4">
+    <div class="grid grid-flow-col justify-between items-center">
+      <h1 class="text-sm font-bold w-40 md:text-xl md:w-56 lg:text-3xl lg:w-80">We Provide Best Customer
+        Experiences</h1>
+      <p class="text-xs md:text-sm lg:text-xl">||We ensure that our customer have the best shopping experience</p>
+    </div>
+  </section>
+
+
+
+  <!-- updates -->
+  <section class="p-4">
+    <div class="grid grid-cols-4 overflow-x-auto scroll-hide gap-2">
+      <div class="bg-gray-200 w-full rounded-lg p-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+          class="size-6 w-6 border-2 border-black rounded-full p-1 mb-2 md:w-7 lg:w-8">
+          <path fill-rule="evenodd"
+            d="M19.916 4.626a.75.75 0 0 1 .208 1.04l-9 13.5a.75.75 0 0 1-1.154.114l-6-6a.75.75 0 0 1 1.06-1.06l5.353 5.353 8.493-12.74a.75.75 0 0 1 1.04-.207Z"
+            clip-rule="evenodd" />
+        </svg>
+        <h3 class="font-bold text-xs md:text-sm lg:text-base">Original Products</h3>
+        <p class="text-xs md:text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro,
+          consequuntur.
+        </p>
+      </div>
+      <div class="bg-gray-200 w-full rounded-lg p-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+          class="size-6 w-6 border-2 border-black rounded-full p-1 mb-2 md:w-7 lg:w-8">
+          <path fill-rule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z"
+            clip-rule="evenodd" />
+        </svg>
+
+        <h3 class="font-bold text-xs md:text-sm lg:text-base">Satisfaction Guarantee</h3>
+        <p class="text-xs md:text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro,
+          consequuntur.
+        </p>
+      </div>
+      <div class="bg-gray-200 w-full rounded-lg p-1 ">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-6 w-6  mb-2 md:w-7 lg:w-8">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
+        </svg>
+
+        <h3 class="font-bold text-xs md:text-sm lg:text-base">New Arrival Everyday</h3>
+        <p class="text-xs md:text-sm ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro,
+          consequuntur.</p>
+      </div>
+      <div class="bg-gray-200 w-full rounded-lg p-1 ">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="size-6 w-6 mb-2 md:w-7 lg:w-8">
+          <path
+            d="M112 0C85.5 0 64 21.5 64 48l0 48L16 96c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 208 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 160l-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l16 0 176 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 224l-48 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 144 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 288l0 128c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L112 0zM544 237.3l0 18.7-128 0 0-96 50.7 0L544 237.3zM160 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z" />
+        </svg>
+
+        <h3 class="font-bold text-xs md:text-sm lg:text-base">Fast & Free Shipping</h3>
+        <p class="text-xs md:text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro,
+          consequuntur.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section class="p-4" id="new-arrivals">
+    <h1 class="font-bold text-3xl mb-4">New Arrivals</h1>
+    <div class="grid grid-flow-col justify-between items-center overflow-x-auto scroll-hide space-x-4 ">
+      <div class="z-0 relative">
+        <img src="./images/na1.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-12 left-1 md:top-28 md:left-9 lg:top-36 lg:left-16">
+          <button
+            class="bg-white text-black rounded-xl md:p-2 text-xs md:text-sm md:rounded-md  lg:text-lg lg:rounded-xl">Shop
+            Now 🡢</button>
+        </div>
+      </div>
+      <div class="z-0 relative">
+        <img src="./images/na2.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-12 left-1 md:top-28 md:left-9 lg:top-36 lg:left-16 ">
+          <button
+            class="bg-white text-black rounded-full md:p-2 text-xs md:text-sm md:rounded-md  lg:text-lg lg:rounded-xl">Shop
+            Now 🡢</button>
+        </div>
+      </div>
+      <div class="z-0 relative">
+        <img src="./images/na3.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-12 left-1 md:top-28 md:left-9 lg:top-36 lg:left-16">
+          <button
+            class="bg-white text-black rounded-full md:p-2 text-xs md:text-sm md:rounded-md  lg:text-lg lg:rounded-xl">Shop
+            Now 🡢</button>
+        </div>
+      </div>
+      <div class="z-0 relative">
+        <img src="./images/n4.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-12 left-1 md:top-28 md:left-9 lg:top-36 lg:left-16">
+          <button
+            class="bg-white text-black rounded-full md:p-2 text-xs md:text-sm md:rounded-md  lg:text-lg lg:rounded-xl">Shop
+            Now 🡢</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Most Wanted -->
+  <section class="p-4" id="most-wanted">
+    <h1 class="font-bold text-3xl mb-4">Most Wanted</h1>
+    <div class="flex overflow-x-auto space-x-4 scroll-hide">
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/n4.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="./images/mw.jpg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/mw3.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="./images/mw4.jpg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/na1.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/mw6.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/MW2.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/mw6.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/MW3.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+      <div class="z-0 relative flex-shrink-0">
+        <img src="./images/N4.jpg" alt="" class="w-24 md:w-44 lg:w-64">
+        <div class="z-10 absolute top-0 left-0.5 ">
+          <button
+            class="bg-red-600 text-white rounded-md px-2 py-0 md:px-4 md:py-0.5 text-sm md:text-lg lg:text-3xl ">sale</button>
+        </div>
+        <div class="z-10 absolute bottom-1 right-1 md:bottom-2 lg:right-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-6 w-6 md:w-8 lg:w-10">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- offer detials -->
+  <section class="p-4">
+    <div class="bg-gray-800 grid grid-cols-2 justify-between items-center gap-5 md:h-80">
+      <div class="md:h-full">
+        <img src="./images/offer.jpg" alt="Offer image" class="p-4 lg:ml-8 md:h-80">
+      </div>
+      <div class="text-white  lg:m-0 md:pr-20">
+        <h1 class="font-bold text-lg md:text-2xl lg:text-5xl lg:mb-2">Limited Offer</h1>
+        <h4 class="font-bold text-xs mb-2 md:text-lg lg:text-2xl">35% OFF on this for the first 30 Customers
+        </h4>
+        <button
+          class="bg-white text-black rounded-full px-4 py-2 text-xs md:text-sm md:rounded-md  lg:text-lg lg:rounded-xl">Shop
+          Now 🡢</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- News letter -->
+  <section class="text-center p-4">
+    <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl">Join our News Letter</h1>
+    <p class="text-xs md:text-xl lg:text-3xl mb-2">Signup for our email newspaper to get exclusive discounts,
+      updates, and more</p>
+    <input type="text" class="border-4 border-gray-800 focus:outline-none p-2" style="width: 88%;">
+    <div class="p-2">
+      <button
+        class="bg-gray-900 text-white text-xs rounded-lg px-4 py-2 md:text-lg lg:text-2xl cursor-pointer">Subscribe
+        🡢</button>
+    </div>
+  </section>
+
+
+  <!-- footer -->
+  <Footer class="bg-gray-900 text-white p-4">
+    <h1 class="font-bold m-2 mb-1 md:text-2xl lg:text-4xl">Nostra</h1>
+    <p class="text-xs m-2 md:text-xl lg:text-3xl">The Standard chunk of Lorem ipsum used since the 1500s is
+      reprodused below for those
+      interest
+    </p>
+    <div class="m-2 p-4 flex justify-start items-center gap-14">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+        class="w-3 md:w-5 lg:w-7"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path fill="#ffffff"
+          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+        class="w-3 md:w-5 lg:w-7"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path fill="#ffffff"
+          d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+        class="w-3 md:w-5 lg:w-7"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path fill="#ffffff"
+          d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z" />
+      </svg>
+    </div>
+    <p class="text-xs m-2 md:text-xl lg:text-3xl">@ 2023 Nostra.com</p>
+
+  </Footer>
+
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>
+</section>
